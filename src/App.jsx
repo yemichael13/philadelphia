@@ -38,42 +38,53 @@ import Bible_5 from "./assets/bible-5.jpg";
         </div>
       </section >
       <section
-        className="relative flex flex-row my-8 h-screen bg-cover bg-right bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: `url(${Cross_2})` }}
+        className="relative flex flex-row my-8 h-auto overflow-hidden"
       >
-        {/* Blur overlay for background */}
-        <div className="absolute inset-0 w-full h-full backdrop-blur-xs z-0"></div>
-        {/* Ellipse occupying left half */}
-        <div
-          className="absolute left-0 top-0 h-full w-1/2 flex items-center justify-end pointer-events-none"
-          style={{ zIndex: 1 }}
-        >
+        {/* Only show the rectangle on small screens, hide everything else */}
+        <div className="md:hidden flex w-full h-full items-center justify-center">
           <div
-            className="w-full h-full bg-green-200 opacity-60 relative"
-            style={{
-              borderTopRightRadius: '50% 100%',
-              borderBottomRightRadius: '50% 100%',
-            }}
+            className="bg-green-900 text-white rounded-lg shadow-lg flex flex-col items-center justify-center"
+            style={{ width: '300px', height: '300px', zIndex: 2 }}
           >
-            {/* Rectangle for text, centered in ellipse */}
+            <h2 className="text-xl font-bold my-2">Pastor Kaleb Kifle</h2>
+            <p>some messages from the pastor</p>
+          </div>
+        </div>
+        {/* On medium and up, show the original ellipse and background */}
+        <div className="hidden md:block w-full h-full">
+          <div
+            className="relative w-full h-full bg-cover bg-right bg-no-repeat overflow-hidden"
+            style={{ backgroundImage: `url(${Cross_2})` }}
+          >
+            <div className="absolute inset-0 w-full h-full backdrop-blur-xs z-0"></div>
             <div
-              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-900 text-white rounded-lg shadow-lg flex flex-col items-center justify-center"
-              style={{ width: '300px', height: '300px', zIndex: 2 }}
+              className="absolute left-0 top-0 h-full w-1/2 flex items-center justify-end pointer-events-none"
+              style={{ zIndex: 1 }}
             >
-              <h2 className="text-xl font-bold my-2">Pastor Kaleb Kifle</h2>
-              <p>some messages from the pastor</p>
-            </div>
-            {/* Profile circle */}
-            <div
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full border-1 border-green-900 shadow-lg mx-2"
-              style={{ width: '120px', height: '120px', zIndex: 2 }}
-            >
-              {/* Profile image can be placed here later */}
+              <div
+                className="w-full h-full bg-green-200 opacity-60 relative"
+                style={{
+                  borderTopRightRadius: '50% 100%',
+                  borderBottomRightRadius: '50% 100%',
+                }}
+              >
+                <div
+                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-900 text-white rounded-lg shadow-lg flex flex-col items-center justify-center"
+                  style={{ width: '300px', height: '300px', zIndex: 2 }}
+                >
+                  <h2 className="text-xl font-bold my-2">Pastor Kaleb Kifle</h2>
+                  <p>some messages from the pastor</p>
+                </div>
+                <div
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full border-1 border-green-900 shadow-lg mx-2"
+                  style={{ width: '120px', height: '120px', zIndex: 2 }}
+                >
+                  {/* Profile image can be placed here later */}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        {/* Content can go here */}
-       
       </section>
       <section className="grid grid-cols-1 md:grid-cols-3 h-screen w-full">
         <div className="bg-white flex flex-col  border-1 border-green-900 w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
@@ -127,7 +138,52 @@ import Bible_5 from "./assets/bible-5.jpg";
       </div>
 
     </section>
+    <section className="bg-green-100 flex items-center justify-center w-full h-auto my-4 px-4 py-20">
+      <div className="bg-white md:w-4/5 md:flex md:flex-row md:justify-center flex flex-col gap-4 border border-green-900 p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col md:w-1/2 w-full">
+          <h2 className="text-4xl font-bold mb-4">Hear from our congregation</h2>
+          <p className="md:mr-4 m-1">We value the voices of our members and strive to create a fulfilling experience for everyone. Check out what they have to say!</p>
+        </div>
+        <div className="bg-green-900 text-white text-center w-full md:w-1/3 p-4 shadow-lg md:mx-4 mx-auto">
+          <h3 className="text-3xl my-4 font-bold">Benjamin Scott</h3>
+          <p className="text-sm">"Being part of Philadelphia Generation Baptist Church has truely changed my life. The senses of community and support from fellow members has been invaluable in my spiritual journey. I feel at home here."</p>
+          <ion-icon name="chevron-forward-circle-outline" ></ion-icon>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="flex flex-col items-center justify-center text-center my-8 p-4 gap-6">
+        <h2 className="text-5xl font-bold">Stay connected with us</h2>
+        <h5 className="text-2xl text-green-900">Subscribe to our newsletter to receive the latest updates, events, and opportunities to connect with our family directly in your box.</h5>
+        <div className="flex flex-row my-4">
+          <input type="email" placeholder="Enter your email" className="border-1 border-green-900 p-2  w-2/3 text-center"/>
+          <button className="bg-green-900 text-white px-4 border-green-900 hover:bg-white hover:text-green-900  border-1">Subscribe</button>
+        </div>
+      </div>
 
+    </section>
+    <section>
+      <div className="flex flex-col items-center justify-center text-center w-full">
+        <h1 className="text-6xl font-bold">Contact Us</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-40 gap-10 text-center my-8 py-8 px-20 bg-green-100">
+            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
+              <ion-icon name="call-outline" size="large"></ion-icon>
+              <h2 className="text-4xl font-bold">Call</h2>
+              <h5>+251-XXX-XXX-XXX</h5>
+            </div>
+            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
+              <ion-icon name="mail-outline" size="large"></ion-icon>
+              <h2 className="text-4xl font-bold">Email</h2>
+              <h5>info@philadelphia.com</h5>
+            </div>
+            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
+              <ion-icon name="location-outline" size="large"></ion-icon>
+              <h2 className="text-4xl font-bold">Location</h2>
+              <h5>123 Church St, Addis Ababa, Ethiopia</h5>
+            </div>
+        </div>
+      </div>
+    </section>
        
     </div>
   );
