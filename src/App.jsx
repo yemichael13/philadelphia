@@ -1,8 +1,136 @@
-import React from "react";
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Bible_4 from "./assets/bible-4.jpg";
+import Cross from "./assets/cross.jpg";
+import Cross_2 from "./assets/cross-2.jpg";
+import { Link } from "react-router-dom";
+import Bible_2 from "./assets/bible-2.jpg";
+import Bible_3 from "./assets/bible-3.jpg";
+import Bible_5 from "./assets/bible-5.jpg";
+
  const App = () => {
   return (
     <div>
-      Hello World!
+      <Navbar />
+      <section >
+        <div className="bg-img='bg-cover bg-center h-screen flex flex-col " style={{ backgroundImage: `url(${Bible_4})` }}>
+          <div className="flex flex-col gap-2 justify-center text-center top-20 my-10 bg-white h-80 w-screen p-6">
+            <h1 className="text-5xl my-6 font-bold  mb-4">Philadelphia Generation Baptist Church</h1>
+            <h3 className="text-2xl ">"A Church that is Rooted and Grounded in the Word of God"</h3>
+          </div>
+        </div>
+        <h3 className="text-center text-2xl my-6 font-semibold">Join us in faith and community</h3>
+        <div className="flex md:flex-row justify-center p-8 my-4">
+          <button className="bg-green-900 cursor-pointer text-white px-6 py-2 rounded-2xl mx-4 hover:bg-white hover:border-green-900 border-1 hover:text-green-900">Get in touch</button>
+          <button className="bg-white cursor-pointer text-green-900 px-6 py-2 rounded-2xl border-1 border-green-900 hover:bg-green-900 hover:text-white">Subscribe to Newsletter</button>
+        </div>
+      </section>
+      <section
+        className="flex flex-row h-screen bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${Cross})` }}
+      >
+        <div className="w-screen md:w-1/2 bg-white h-full flex flex-col justify-center p-8">
+          <h2 className="bg-green-900 text-white text-6xl mb-4 p-4">Learn more about our church</h2>
+          <p>
+            At Philadelphia Baptist Church, we embrace the transformative power of faith to uplift our community and foster spiritual growth. With a heartfelt dedication to our mission and a welcoming spirit, our congregation invites you to explore our rich history, diverse ministries, and upcoming events. Together, we strive to create a nurturing environment where everyone feels valued and connected.<br/><br/>
+            Whether you are seeking a place to worship, engage in community service, or deepen your spiritual journey, we are here to support you. Discover the warmth of fellowship and the strength of faith at Philadelphia Baptist Church.
+          </p>
+        </div>
+      </section >
+      <section
+        className="relative flex flex-row my-8 h-screen bg-cover bg-right bg-no-repeat overflow-hidden"
+        style={{ backgroundImage: `url(${Cross_2})` }}
+      >
+        {/* Blur overlay for background */}
+        <div className="absolute inset-0 w-full h-full backdrop-blur-xs z-0"></div>
+        {/* Ellipse occupying left half */}
+        <div
+          className="absolute left-0 top-0 h-full w-1/2 flex items-center justify-end pointer-events-none"
+          style={{ zIndex: 1 }}
+        >
+          <div
+            className="w-full h-full bg-green-200 opacity-60 relative"
+            style={{
+              borderTopRightRadius: '50% 100%',
+              borderBottomRightRadius: '50% 100%',
+            }}
+          >
+            {/* Rectangle for text, centered in ellipse */}
+            <div
+              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-900 text-white rounded-lg shadow-lg flex flex-col items-center justify-center"
+              style={{ width: '300px', height: '300px', zIndex: 2 }}
+            >
+              <h2 className="text-xl font-bold my-2">Pastor Kaleb Kifle</h2>
+              <p>some messages from the pastor</p>
+            </div>
+            {/* Profile circle */}
+            <div
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full border-1 border-green-900 shadow-lg mx-2"
+              style={{ width: '120px', height: '120px', zIndex: 2 }}
+            >
+              {/* Profile image can be placed here later */}
+            </div>
+          </div>
+        </div>
+        {/* Content can go here */}
+       
+      </section>
+      <section className="grid grid-cols-1 md:grid-cols-3 h-screen w-full">
+        <div className="bg-white flex flex-col  border-1 border-green-900 w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
+            <img src={Bible_2} alt="Bible" className="w-full h-auto mb-4" />
+            <h3 className="text-center text-3xl font-bold my-5">Worship Services</h3>
+            <p className="text-center px-4">Our worship services are designed to inspire and uplift. Join us for heartfelt music, engaging sermons, and a community that celebrates faith together.</p>
+        </div>
+    <div className="bg-green-900 flex flex-col-reverse border-1 border-green-900 w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
+      <img src={Bible_5} alt="Bible" className="w-full h-auto mt-4" />
+      <div className="flex flex-col flex-grow justify-center">
+        <h3 className="text-center text-white text-3xl font-bold my-5">Community Outreach</h3>
+        <p className="text-center text-white px-4 my-4">We believe in giving back to our community. Our outreach programs aim to serve those in need, fostering connections and promoting hope.</p>
+      </div>
     </div>
-  )
- }
+        <div className="bg-white flex flex-col  border-1 border-green-900 w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
+            <img src={Bible_3} alt="Bible" className="w-full h-auto mb-4" />
+            <h3 className="text-center text-3xl font-bold my-5">Small Groups</h3>
+            <p className="text-center px-4">Join our small groups for fellowship and support. These gatherings offer a space for prayer, discussion, and building lasting relationships in faith.</p>
+        </div>
+      </section>
+      <section className="my-8 flex flex-col gap-6 w-full overflow-hidden">
+      
+      {/* Row 1 → scrolls left */}
+      <div className="flex w-[200%] animate-scrollLeft">
+        <div className="flex gap-2 w-1/2">
+          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_3} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_2} alt="Bible" className="w-1/3 h-auto object-cover" />
+        </div>
+        {/* duplicate for smooth loop */}
+        <div className="flex gap-2 w-1/2">
+          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_3} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_2} alt="Bible" className="w-1/3 h-auto object-cover" />
+        </div>
+      </div>
+
+      {/* Row 2 → scrolls right */}
+      <div className="flex w-[200%] animate-scrollRight">
+        <div className="flex gap-2 w-1/2">
+          <img src={Bible_5} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Cross} alt="Cross" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
+        </div>
+        {/* duplicate for smooth loop */}
+        <div className="flex gap-2 w-1/2">
+          <img src={Bible_5} alt="Bible" className="w-1/3 h-auto object-cover" />
+          <img src={Cross} alt="Cross" className="w-1/3 h-auto object-cover" />
+          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
+        </div>
+      </div>
+
+    </section>
+
+       
+    </div>
+  );
+}
+
+ export default App;
