@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
   <div 
-    className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white h-20 border-1 border-gray-300 shadow-md px-4 transition-opacity duration-300 ${navbarHovered ? 'opacity-100' : 'opacity-30'}`}
+    className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white h-20 border-1 border-gray-300 shadow-md px-4 transition-opacity duration-300 ${navbarHovered ? 'opacity-100' : 'md:opacity-30'}`}
     onMouseEnter={() => setNavbarHovered(true)}
     onMouseLeave={() => setNavbarHovered(false)}
   >
