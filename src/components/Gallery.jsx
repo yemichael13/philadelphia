@@ -69,7 +69,7 @@ function Gallery() {
                     >
                         {upperMarquee.map((image, index) => (
                             <img key={index} src={image} alt={`Marquee Image ${index + 1}`}
-                                className="w-1/3 h-60 object-cover " />
+                                className="w-[40vw] sm:w-1/3 h-40 sm:h-60 object-cover " />
                         ))}
                     </motion.div>
                     <motion.div
@@ -79,7 +79,7 @@ function Gallery() {
                     >
                         {upperMarquee.map((image, index) => (
                             <img key={index} src={image} alt={`Marquee Image ${index + 1}`}
-                                className="w-1/3 h-60 object-cover " />
+                                className="w-[40vw] sm:w-1/3 h-40 sm:h-60 object-cover " />
                         ))}
                     </motion.div>
                 </div>
@@ -100,7 +100,7 @@ function Gallery() {
                     >
                         {lowerMarquee.map((image, index) => (
                             <img key={index} src={image} alt={`Marquee Image ${index + 1}`}
-                                className="w-1/3 h-60 object-cover" />
+                                className="w-[40vw] sm:w-1/3 h-40 sm:h-60 object-cover" />
                         ))}
                     </motion.div>
                     <motion.div
@@ -110,7 +110,7 @@ function Gallery() {
                     >
                         {lowerMarquee.map((image, index) => (
                             <img key={index} src={image} alt={`Marquee Image ${index + 1}`}
-                                className="w-1/3 h-60 object-cover" />
+                                className="w-[40vw] sm:w-1/3 h-40 sm:h-60 object-cover" />
                         ))}
                     </motion.div>
                 </div>

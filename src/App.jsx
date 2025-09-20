@@ -107,7 +107,7 @@ import Gallery from "./components/Gallery";
         </div>
       </section>
 
-      <Gallery />
+      <Gallery className="h-100" />
       
     <section className="bg-green-100 flex items-center justify-center w-full h-auto my-4 px-4 py-20">
       <div className="bg-white md:w-4/5 md:flex md:flex-row md:justify-center flex flex-col gap-4 border border-green-900 p-8 rounded-lg shadow-lg">
