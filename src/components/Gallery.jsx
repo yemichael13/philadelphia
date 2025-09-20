@@ -45,7 +45,7 @@ function Gallery() {
     }, []);
 
     return (
-        <div className="relative">
+        <div className="md:relative hidden md:block my-8 mx-4 md:mx-0">
             {/* Gradient borders */}
             <div className="pointer-events-none absolute top-0 left-0 h-full w-8 z-10"
                 style={{ background: "linear-gradient(to right, #fafcfb 20%, #fafcfb 80%, transparent)" }} />
