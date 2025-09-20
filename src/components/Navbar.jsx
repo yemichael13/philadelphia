@@ -15,8 +15,8 @@ const Navbar = () => {
         )}
       </div>
       {/* Menu */}
-      <div className={`absolute md:static bg-white md:min-h-fit min-h-[60vh] left-0 top-20 w-full md:w-auto px-5 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'} md:flex md:items-center md:justify-end`}>
-        <ul className="flex md:flex-row flex-col md:gap-8 gap-8 px-4 py-2 text-sm md:mx-4">
+      <div className={`absolute md:static bg-white md:min-h-fit min-h-[20vh] border-b-gray-400 md:border-none md:shadow-none shadow-lg left-0 top-20 w-full md:w-auto px-5 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'} md:flex md:items-center md:justify-end`}>
+        <ul className="flex md:flex-row flex-col justify-center items-center md:gap-8 gap-8 px-4 py-2 text-sm md:mx-4">
           <li className="hover:text-green-900"><Link to="/">About</Link></li>
           <li className="hover:text-green-900"><Link to="/">Services</Link></li>
           <li className="hover:text-green-900"><Link to="/">Reviews</Link></li>

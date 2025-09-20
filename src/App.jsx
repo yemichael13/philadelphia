@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 import Bible_2 from "./assets/bible-2.jpg";
 import Bible_3 from "./assets/bible-3.jpg";
 import Bible_5 from "./assets/bible-5.jpg";
+import Gallery from "./components/Gallery";
 
  const App = () => {
   return (
-    <div>
+    <div className="w-full h-auto overflow-x-hidden">
       <Navbar />
-      <section >
+      <section className="md:h-auto">
         <div className="bg-img='bg-cover bg-center h-screen flex flex-col " style={{ backgroundImage: `url(${Bible_4})` }}>
           <div className="flex flex-col gap-2 justify-center text-center top-20 my-10 bg-white h-80 w-screen p-6">
             <h1 className="text-5xl my-6 font-bold  mb-4">Philadelphia Generation Baptist Church</h1>
@@ -105,39 +106,9 @@ import Bible_5 from "./assets/bible-5.jpg";
             <p className="text-center px-4">Join our small groups for fellowship and support. These gatherings offer a space for prayer, discussion, and building lasting relationships in faith.</p>
         </div>
       </section>
-      <section className="my-8 flex flex-col gap-6 w-full overflow-hidden">
+
+      <Gallery />
       
-      {/* Row 1 → scrolls left */}
-      <div className="flex w-[200%] animate-scrollLeft">
-        <div className="flex gap-2 w-1/2">
-          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_3} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_2} alt="Bible" className="w-1/3 h-auto object-cover" />
-        </div>
-        {/* duplicate for smooth loop */}
-        <div className="flex gap-2 w-1/2">
-          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_3} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_2} alt="Bible" className="w-1/3 h-auto object-cover" />
-        </div>
-      </div>
-
-      {/* Row 2 → scrolls right */}
-      <div className="flex w-[200%] animate-scrollRight">
-        <div className="flex gap-2 w-1/2">
-          <img src={Bible_5} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Cross} alt="Cross" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
-        </div>
-        {/* duplicate for smooth loop */}
-        <div className="flex gap-2 w-1/2">
-          <img src={Bible_5} alt="Bible" className="w-1/3 h-auto object-cover" />
-          <img src={Cross} alt="Cross" className="w-1/3 h-auto object-cover" />
-          <img src={Bible_4} alt="Bible" className="w-1/3 h-auto object-cover" />
-        </div>
-      </div>
-
-    </section>
     <section className="bg-green-100 flex items-center justify-center w-full h-auto my-4 px-4 py-20">
       <div className="bg-white md:w-4/5 md:flex md:flex-row md:justify-center flex flex-col gap-4 border border-green-900 p-8 rounded-lg shadow-lg">
         <div className="flex flex-col md:w-1/2 w-full">
