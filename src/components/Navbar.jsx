@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Logo from "../assets/p_logo.png";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,9 @@ const Navbar = () => {
     onMouseEnter={() => setNavbarHovered(true)}
     onMouseLeave={() => setNavbarHovered(false)}
   >
-      <h3 className="text-green-900 py-2 text-2xl">Philadelphia</h3>
+    <a href="/" className="cursor-pointer">
+      <img src={Logo} alt="Logo" className="h-12 w-12 object-contain " />
+    </a>
       {/* Hamburger icon for mobile */}
       <div className="md:hidden flex items-center">
         {!menuOpen ? (
