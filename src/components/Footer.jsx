@@ -14,49 +14,58 @@ const Footer = () => {
     }
   };
   return (
-  <section>
-    <div className='w-full h-auto  flex md:flex-row flex-col gap-4 md:justify-between items-center  mt-2 md:mt-8 p-8'>
-        <div>
-            <a href="/" className="cursor-pointer">
-                <img src={Logo} alt="Logo" className="h-40 w-40 object-contain " />
+  <footer className="bg-green-900 text-white">
+    <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="grid md:grid-cols-3 gap-12 items-start">
+        <div className="text-center md:text-left">
+          <a href="/" className="inline-block cursor-pointer mb-6">
+            <img src={Logo} alt="Logo" className="h-24 w-24 object-contain mx-auto md:mx-0" />
+          </a>
+          <h3 className="text-xl font-semibold mb-2">Philadelphia Generation Baptist Church</h3>
+          <p className="text-green-100">Addis Ababa, Ethiopia</p>
+        </div>
+        
+        <div className="text-center">
+          <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+          <ul className="space-y-3">
+            <li><a href="#about" onClick={handleSmoothScroll} className="text-green-100 hover:text-white transition-colors">About</a></li>
+            <li><a href="#services" onClick={handleSmoothScroll} className="text-green-100 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#gallery" onClick={handleSmoothScroll} className="text-green-100 hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="#review" onClick={handleSmoothScroll} className="text-green-100 hover:text-white transition-colors">Reviews</a></li>
+            <li><a href="#contact" onClick={handleSmoothScroll} className="text-green-100 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div className="text-center">
+          <h4 className="text-xl font-bold mb-6">Follow Us</h4>
+          <div className="space-y-4">
+            <a href="https://www.facebook.com/profile.php?id=100077574315008" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-green-100 hover:text-white transition-all duration-300 hover:translate-x-1">
+              <ion-icon name="logo-facebook" className="text-2xl"></ion-icon>
+              <span>Facebook</span>
             </a>
-            <h5>Addis Ababa, Ethiopia</h5>
+            <a href="https://instagram.com/pastorkalebmoges" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-green-100 hover:text-white transition-all duration-300 hover:translate-x-1">
+              <ion-icon name="logo-instagram" className="text-2xl"></ion-icon>
+              <span>Instagram</span>
+            </a>
+            <a href="https://youtube.com/@pastorkalebkiflemoges5339" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-green-100 hover:text-white transition-all duration-300 hover:translate-x-1">
+              <ion-icon name="logo-youtube" className="text-2xl"></ion-icon>
+              <span>YouTube</span>
+            </a>
+            <a href="https://tiktok.com/@pastorkalebkifl66" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-green-100 hover:text-white transition-all duration-300 hover:translate-x-1">
+              <ion-icon name="logo-tiktok" className="text-2xl"></ion-icon>
+              <span>TikTok</span>
+            </a>
+          </div>
         </div>
-        <div className='flex flex-row justify-center items-center gap-8 md:w-1/2 border-l border-l-black' >
-            <div >
-            <ul className='flex flex-col justify-center items-center gap-8 px-4 py-2 text-sm md:mx-4'>
-                <li className="hover:text-green-900"><a href="#about" onClick={handleSmoothScroll}>About</a></li>
-                <li className="hover:text-green-900"><a href="#services" onClick={handleSmoothScroll}>Services</a></li>
-                <li className="hover:text-green-900"><a href="#gallery" onClick={handleSmoothScroll}>Gallery</a></li>
-                <li className="hover:text-green-900"><a href="#review" onClick={handleSmoothScroll}>Reviews</a></li>
-                <li className="hover:text-green-900"><a href="#contact" onClick={handleSmoothScroll}>Contact</a></li>
-            </ul>
-        </div>
-        <div className='flex flex-col justify-center items-center gap-8 md:w-1/2 border-r border-r-black' >
-            <h4 className='text-2xl font-bold'>Find Us</h4>
-            <ul className='flex flex-col justify-center items-center gap-8 px-4 py-2 text-sm md:mx-4'>
-                                <a href="https://www.facebook.com/profile.php?id=100077574315008" target="_blank" rel="noopener noreferrer" className='cursor-pointer flex gap-2 items-baseline transition-transform duration-300 hover:-translate-y-2'>
-                                    <ion-icon name="logo-facebook"></ion-icon>Facebook
-                                </a>
-                                <a href="https://instagram.com/pastorkalebmoges" target="_blank" rel="noopener noreferrer" className='cursor-pointer flex gap-2 items-baseline transition-transform duration-300 hover:-translate-y-2'>
-                                    <ion-icon name="logo-instagram"></ion-icon>Instagram
-                                </a>
-                                <a href="https://youtube.com/@pastorkalebkiflemoges5339" target="_blank" rel="noopener noreferrer" className='cursor-pointer flex gap-2 items-baseline transition-transform duration-300 hover:-translate-y-2'>
-                                    <ion-icon name="logo-youtube"></ion-icon>Youtube
-                                </a>
-                                <a href="https://tiktok.com/@pastorkalebkifl66" target="_blank" rel="noopener noreferrer" className='cursor-pointer flex gap-2 items-baseline transition-transform duration-300 hover:-translate-y-2'>
-                                    <ion-icon name="logo-tiktok"></ion-icon>Tiktok
-                                </a>
-            </ul>
-        </div>
-        </div>
-        
-        
+      </div>
     </div>
-    <div className=' border-t border-t-black w-4/5  p-4'>
-        <p className="font-light">&copy; {new Date().getFullYear()} Philadephia generation baptist church </p>
+    
+    <div className="border-t border-green-800">
+      <div className="max-w-6xl mx-auto px-4 py-6 text-center">
+        <p className="text-green-100">&copy; {new Date().getFullYear()} Philadelphia Generation Baptist Church. All rights reserved.</p>
+      </div>
     </div>
-  </section>
+  </footer>
     
   )
 }

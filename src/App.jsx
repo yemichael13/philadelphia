@@ -25,32 +25,58 @@ import Profile from "./assets/profile.png";
   return (
   <div className="w-full h-auto overflow-x-hidden pt-20">
       <Navbar />
-      <section id="hero" className="md:h-auto">
-        <div className="bg-img='bg-cover bg-center h-screen mb-4 flex flex-col " style={{ backgroundImage: `url(${Bible_4})` }}>
-          <div className="flex flex-col gap-2 justify-center text-center top-20 my-10 bg-white h-80 w-screen p-6">
-            <h1 className="text-5xl my-6 font-bold  mb-4">Philadelphia Generation Baptist Church</h1>
-            <h3 className="text-2xl ">"A Church that is Rooted and Grounded in the Word of God"</h3>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${Bible_4})` }}
+        />
+        <div className="hero-overlay" />
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="display-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            Philadelphia Generation Baptist Church Ethiopia
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 font-light opacity-90">
+            "A Church that is Rooted and Grounded in the Word of God"
+          </p>
+          <p className="text-lg md:text-xl mb-12 font-medium">
+            Join us in faith and community
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#contact" onClick={handleSmoothScroll}>
+              <button className="bg-green-900 text-white px-8 py-4 rounded-full cta-btn font-semibold text-lg hover:bg-white hover:text-green-900 border-2 border-green-900 transition-all duration-300">
+                Get in Touch
+              </button>
+            </a>
+            <a href="#newsletter" onClick={handleSmoothScroll}>
+              <button className="bg-white text-green-900 px-8 py-4 rounded-full cta-btn font-semibold text-lg hover:bg-green-900 hover:text-white border-2 border-white/30 transition-all duration-300">
+                Subscribe to Newsletter
+              </button>
+            </a>
           </div>
-        </div>
-        <h3 className="text-center text-2xl my-6 font-semibold">Join us in faith and community</h3>
-        <div className="flex md:flex-row justify-center p-8 my-4">
-        <a href="#contact" onClick={handleSmoothScroll}> <button className="bg-green-900 cursor-pointer text-white px-6 py-2 rounded-2xl mx-4 hover:bg-white hover:border-green-900 border-1 hover:text-green-900">Get in touch</button></a>
-        <a href="#newsletter" onClick={handleSmoothScroll}>  <button className="bg-white cursor-pointer text-green-900 px-6 py-2 rounded-2xl border-1 border-green-900 hover:bg-green-900 hover:text-white">Subscribe to Newsletter</button></a>
         </div>
       </section>
       <section
         id="about"
-        className=" flex flex-row h-screen bg-cover bg-center md:pt-25 bg-no-repeat"
+        className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${Cross})` }}
       >
-        <div className="w-screen md:w-1/2 bg-white h-full flex flex-col justify-center p-8">
-          <h2 className="bg-green-900 text-white text-6xl mb-4 p-4">Learn more about our church</h2>
-          <p>
-            At Philadelphia Baptist Church, we embrace the transformative power of faith to uplift our community and foster spiritual growth. With a heartfelt dedication to our mission and a welcoming spirit, our congregation invites you to explore our rich history, diverse ministries, and upcoming events. Together, we strive to create a nurturing environment where everyone feels valued and connected.<br/><br/>
-            Whether you are seeking a place to worship, engage in community service, or deepen your spiritual journey, we are here to support you. Discover the warmth of fellowship and the strength of faith at Philadelphia Baptist Church.
-          </p>
+        <div className="hero-overlay" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl">
+            <h2 className="display-serif text-4xl md:text-6xl font-bold text-green-900 mb-8">
+              Learn more about our church
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-6">
+                At Philadelphia Baptist Church, we embrace the transformative power of faith to uplift our community and foster spiritual growth. With a heartfelt dedication to our mission and a welcoming spirit, our congregation invites you to explore our rich history, diverse ministries, and upcoming events.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Whether you are seeking a place to worship, engage in community service, or deepen your spiritual journey, we are here to support you. Discover the warmth of fellowship and the strength of faith at Philadelphia Baptist Church.
+              </p>
+            </div>
+          </div>
         </div>
-      </section >
+      </section>
       <section
         id="pastor-message"
         className="relative flex flex-row my-8 h-auto overflow-visible"
@@ -85,7 +111,7 @@ import Profile from "./assets/profile.png";
               style={{ zIndex: 1 }}
             >
               <div
-                className="w-full min-h-[500px] bg-green-200 opacity-100 relative flex items-center justify-center"
+                className="w-full min-h-[500px] bg-white opacity-100 relative flex items-center justify-center"
                 style={{
                   borderTopRightRadius: '50% 100%',
                   borderBottomRightRadius: '50% 100%',
@@ -110,23 +136,41 @@ import Profile from "./assets/profile.png";
           </div>
         </div>
       </section>
-      <section id="services" className="md:grid flex flex-col md:grid-cols-3 md:pt-25 h-auto w-full gap-4 px-2 md:px-0">
-        <div className="bg-white flex flex-col border-1 border-green-900 w-full md:w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
-          <img src={Bible_2} alt="Bible" className="w-full h-auto mb-4" />
-          <h3 className="text-center text-2xl md:text-3xl font-bold my-5">Worship Services</h3>
-          <p className="text-center px-2 md:px-4">Our worship services are designed to inspire and uplift. Join us for heartfelt music, engaging sermons, and a community that celebrates faith together.</p>
-        </div>
-        <div className="bg-green-900 flex flex-col-reverse border-1 border-green-900 w-full md:w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
-          <img src={Bible_5} alt="Bible" className="w-full h-auto mt-4" />
-          <div className="flex flex-col flex-grow justify-center">
-            <h3 className="text-center text-white text-2xl md:text-3xl font-bold my-5">Community Outreach</h3>
-            <p className="text-center text-white px-2 md:px-4 my-4">We believe in giving back to our community. Our outreach programs aim to serve those in need, fostering connections and promoting hope.</p>
+      <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="display-serif text-4xl md:text-5xl font-bold text-green-900 mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Discover the ways we serve our community and strengthen our faith together</p>
           </div>
-        </div>
-        <div className="bg-white flex flex-col border-1 border-green-900 w-full md:w-3/4 hover:scale-105 duration-300 mx-auto my-4 hover:cursor-pointer hover:shadow-lg">
-          <img src={Bible_3} alt="Bible" className="w-full h-auto mb-4" />
-          <h3 className="text-center text-2xl md:text-3xl font-bold my-5">Small Groups</h3>
-          <p className="text-center px-2 md:px-4">Join our small groups for fellowship and support. These gatherings offer a space for prayer, discussion, and building lasting relationships in faith.</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="elevated-card bg-white overflow-hidden group hover:scale-105 transition-all duration-300">
+              <div className="aspect-video overflow-hidden">
+                <img src={Bible_2} alt="Worship Services" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-green-900 mb-4">Worship Services</h3>
+                <p className="text-gray-600 leading-relaxed">Our worship services are designed to inspire and uplift. Join us for heartfelt music, engaging sermons, and a community that celebrates faith together.</p>
+              </div>
+            </div>
+            <div className="elevated-card bg-green-900 text-white overflow-hidden group hover:scale-105 transition-all duration-300">
+              <div className="aspect-video overflow-hidden">
+                <img src={Bible_5} alt="Community Outreach" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Community Outreach</h3>
+                <p className="text-green-100 leading-relaxed">We believe in giving back to our community. Our outreach programs aim to serve those in need, fostering connections and promoting hope.</p>
+              </div>
+            </div>
+            <div className="elevated-card bg-white overflow-hidden group hover:scale-105 transition-all duration-300">
+              <div className="aspect-video overflow-hidden">
+                <img src={Bible_3} alt="Small Groups" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-green-900 mb-4">Small Groups</h3>
+                <p className="text-gray-600 leading-relaxed">Join our small groups for fellowship and support. These gatherings offer a space for prayer, discussion, and building lasting relationships in faith.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -146,22 +190,36 @@ import Profile from "./assets/profile.png";
 
     
 
-    <section className="w-full pt-10 pb-10 px-2" id="newsletter">
-      <div className="flex flex-col items-center justify-center text-center my-8 p-4 gap-6">
-        <h2 className="text-5xl font-bold">Stay connected with us</h2>
-        <h5 className="text-2xl text-green-900">Subscribe to our newsletter to receive the latest updates, events, and opportunities to connect with our family directly in your box.</h5>
+    <section className="w-full py-20 bg-gradient-to-r from-green-900 to-green-800" id="newsletter">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="display-serif text-4xl md:text-5xl font-bold text-white mb-6">Stay connected with us</h2>
+        <p className="text-xl text-green-100 mb-12 max-w-3xl mx-auto">Subscribe to our newsletter to receive the latest updates, events, and opportunities to connect with our family directly in your inbox.</p>
         <form
           action="https://philadelphiagnbaptistethiopia.us11.list-manage.com/subscribe/post?u=6658d12054f3d8bd98c6fcf9b&amp;id=922b8b5360&amp;f_id=00d4d5e3f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          className="validate w-full"
+          className="validate w-full max-w-2xl mx-auto"
           target="_blank"
           noValidate
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center my-4 w-full">
-            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required className="required email border-1 border-green-900 p-2 w-2/3 sm:w-2/3 text-center " />
-            <button type="submit" name="subscribe" id="mc-embedded-subscribe" className="bg-green-900 text-white px-4 border-green-900 hover:bg-white mt-4 md:mt-0 hover:text-green-900 border-1 md:h-10.5">Subscribe</button>
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <input 
+              type="email" 
+              name="EMAIL" 
+              id="mce-EMAIL" 
+              placeholder="Enter your email address" 
+              required 
+              className="flex-1 px-6 py-4 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300" 
+            />
+            <button 
+              type="submit" 
+              name="subscribe" 
+              id="mc-embedded-subscribe" 
+              className="bg-white text-green-900 px-8 py-4 rounded-full font-semibold hover:bg-green-100 transition-all duration-300 cta-btn whitespace-nowrap"
+            >
+              Subscribe
+            </button>
           </div>
           <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
             <input type="text" name="b_6658d12054f3d8bd98c6fcf9b_922b8b5360" tabIndex="-1" />
@@ -169,27 +227,37 @@ import Profile from "./assets/profile.png";
         </form>
       </div>
     </section>
-    <section id="contact" className="w-full h-auto md:py-25 px-4 md:px-0">
-      <div className="flex flex-col items-center justify-center text-center w-full">
-        <h1 className="text-6xl font-bold">Contact Us</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-40 gap-10 text-center my-8 py-8 md:px-20 px-2 w-full bg-green-100">
-            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
-              <ion-icon name="call-outline" size="large"></ion-icon>
-              <h2 className="text-4xl font-bold">Call</h2>
-              <h5>+251-911-954-960</h5>
+    <section id="contact" className="w-full py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h1 className="display-serif text-4xl md:text-6xl font-bold text-green-900 mb-4">Contact Us</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Get in touch with us. We'd love to hear from you and answer any questions you may have.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="elevated-card bg-white p-8 text-center group hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-900 transition-colors duration-300">
+              <ion-icon name="call-outline" size="large" className="text-green-900 group-hover:text-white"></ion-icon>
             </div>
-            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
-              <ion-icon name="mail-outline" size="large"></ion-icon>
-              <h2 className="text-4xl font-bold">Email</h2>
-              <h5 className="text-sm">info@philadelphiagnbaptistethiopia.org</h5>
-              <h5 className="text-sm">pastorkalebk@gmail.com</h5>
-              
+            <h2 className="text-2xl font-bold text-green-900 mb-4">Call Us</h2>
+            <p className="text-gray-600 text-lg">+251-911-954-960</p>
+          </div>
+          <div className="elevated-card bg-white p-8 text-center group hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-900 transition-colors duration-300">
+              <ion-icon name="mail-outline" size="large" className="text-green-900 group-hover:text-white"></ion-icon>
             </div>
-            <div className="flex flex-col items-center gap-2 bg-white p-8 rounded-lg shadow-lg">
-              <ion-icon name="location-outline" size="large"></ion-icon>
-              <h2 className="text-4xl font-bold">Location</h2>
-              <h5>Yeka, Addis Ababa, Ethiopia</h5>
+            <h2 className="text-2xl font-bold text-green-900 mb-4">Email Us</h2>
+            <div className="space-y-2">
+              <p className="text-gray-600 text-sm">info@philadelphiagnbaptistethiopia.org</p>
+              <p className="text-gray-600 text-sm">pastorkalebk@gmail.com</p>
             </div>
+          </div>
+          <div className="elevated-card bg-white p-8 text-center group hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-900 transition-colors duration-300">
+              <ion-icon name="location-outline" size="large" className="text-green-900 group-hover:text-white"></ion-icon>
+            </div>
+            <h2 className="text-2xl font-bold text-green-900 mb-4">Visit Us</h2>
+            <p className="text-gray-600">Yeka, Addis Ababa, Ethiopia</p>
+          </div>
         </div>
       </div>
     </section>

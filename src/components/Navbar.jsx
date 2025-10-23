@@ -19,12 +19,13 @@ const Navbar = () => {
 
   return (
   <div 
-    className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white h-20 border-1 border-gray-300 shadow-md px-4 transition-opacity duration-300 ${navbarHovered ? 'opacity-100' : 'md:opacity-30'}`}
+    className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center glass h-20 border border-gray-200/60 shadow-md px-4 md:px-8 transition-opacity duration-300 ${navbarHovered ? 'opacity-100' : 'md:opacity-30'}`}
     onMouseEnter={() => setNavbarHovered(true)}
     onMouseLeave={() => setNavbarHovered(false)}
   >
-    <a href="/" className="cursor-pointer">
-      <img src={Logo} alt="Logo" className="h-12 w-12 object-contain " />
+    <a href="/" className="cursor-pointer flex items-center gap-3">
+      <img src={Logo} alt="Logo" className="h-10 w-10 object-contain rounded" />
+      <span className="hidden sm:block font-semibold tracking-tight">Philadelphia GBC</span>
     </a>
       {/* Hamburger icon for mobile */}
       <div className="md:hidden flex items-center">
@@ -35,13 +36,15 @@ const Navbar = () => {
         )}
       </div>
       {/* Menu */}
-      <div className={`absolute md:static mb-4 bg-white md:min-h-fit min-h-[20vh] border-b-gray-400 md:border-none md:shadow-none shadow-lg left-0 top-20 w-full md:w-auto px-5 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'} md:flex md:items-center md:justify-end`}>
-        <ul className="flex md:flex-row flex-col justify-center items-center md:gap-8 gap-8 px-4 py-2 text-sm md:mx-4">
-          <li className="hover:text-green-900"><a href="#about" onClick={handleSmoothScroll}>About</a></li>
-          <li className="hover:text-green-900"><a href="#services" onClick={handleSmoothScroll}>Services</a></li>
-          <li className="hover:text-green-900"><a href="#gallery" onClick={handleSmoothScroll}>Gallery</a></li>
-          <li className="hover:text-green-900"><a href="#review" onClick={handleSmoothScroll}>Reviews</a></li>
-          <li className="hover:text-green-900"><a href="#contact" onClick={handleSmoothScroll}>Contact</a></li>
+      <div className={`absolute md:static mb-4 bg-white md:bg-transparent md:min-h-fit min-h-[40vh] border-b-gray-200 md:border-none md:shadow-none shadow-lg left-0 top-20 w-full md:w-auto px-5 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'} md:flex md:items-center md:justify-end`}>
+        <ul className="flex md:flex-row flex-col justify-center items-center md:gap-8 gap-6 px-4 py-4 text-sm md:mx-4">
+          <li className="hover:text-green-900 transition-colors"><a href="#about" onClick={handleSmoothScroll}>About</a></li>
+          <li className="hover:text-green-900 transition-colors"><a href="#services" onClick={handleSmoothScroll}>Services</a></li>
+          <li className="hover:text-green-900 transition-colors"><a href="#gallery" onClick={handleSmoothScroll}>Gallery</a></li>
+          <li className="hover:text-green-900 transition-colors"><a href="#review" onClick={handleSmoothScroll}>Reviews</a></li>
+          <li>
+            <a href="#contact" onClick={handleSmoothScroll} className="bg-green-900 text-white px-4 py-2 rounded-full cta-btn hover:bg-white hover:text-green-900 border border-green-900">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
