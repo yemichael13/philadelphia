@@ -233,6 +233,60 @@ import Profile from "./assets/profile.png";
           <h1 className="display-serif text-4xl md:text-6xl font-bold text-green-900 mb-4">Contact Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">Get in touch with us. We'd love to hear from you and answer any questions you may have.</p>
         </div>
+        <div className="p-4 m-4">
+  <form
+    action="https://formsubmit.co/info@philadelphiagnbaptistethiopia.org"
+    method="POST"
+    className="flex flex-col px-5 md:px-20 mb-12 gap-6 max-w-3xl mx-auto justify-center"
+  >
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Message from Website Contact Form"
+    />
+    <input
+      type="hidden"
+      name="_captcha"
+      value="false"
+    />
+    <input
+      type="hidden"
+      name="_template"
+      value="table"
+    />
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Name*"
+      required
+      className="border-b-1 border-gray-500 rounded-2xl px-4 py-2"
+    />
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Email*"
+      required
+      className="border-b-1 border-gray-500 rounded-2xl px-4 py-2"
+    />
+
+    <textarea
+      name="message"
+      placeholder="Message*"
+      required
+      className="border-1 border-gray-500 px-4 py-2 rounded-2xl"
+    ></textarea>
+
+    <button
+      type="submit"
+      className="bg-green-900 text-white w-1/4 px-4 py-2 mx-auto rounded-xl cta-btn font-semibold hover:bg-white hover:text-green-900 border-1 border-green-900 transition-all duration-300"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="elevated-card bg-white p-8 text-center group hover:scale-105 transition-all duration-300">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-900 transition-colors duration-300">
@@ -246,10 +300,26 @@ import Profile from "./assets/profile.png";
               <ion-icon name="mail-outline" size="large" className="text-green-900 group-hover:text-white"></ion-icon>
             </div>
             <h2 className="text-2xl font-bold text-green-900 mb-4">Email Us</h2>
-            <div className="space-y-2">
-              <p className="text-gray-600 text-sm">info@philadelphiagnbaptistethiopia.org</p>
-              <p className="text-gray-600 text-sm">pastorkalebk@gmail.com</p>
-            </div>
+            <div className="flex flex-col space-y-2">
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@philadelphiagnbaptistethiopia.org"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-600 text-sm hover:text-green-700 transition-colors"
+  >
+    info@philadelphiagnbaptistethiopia.org
+  </a>
+
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=pastorkalebk@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-600 text-sm hover:text-green-700 transition-colors"
+  >
+    pastorkalebk@gmail.com
+  </a>
+</div>
+
           </div>
           <div className="elevated-card bg-white p-8 text-center group hover:scale-105 transition-all duration-300">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-900 transition-colors duration-300">
